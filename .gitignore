@@ -1,0 +1,21 @@
+# Python virtual environment (rebuilt from uv.lock — never commit)
+.venv/
+
+# Python caches
+__pycache__/
+*.pyc
+
+# DuckDB database files (can be large; rebuilt from raw data)
+*.duckdb
+*.duckdb.wal
+
+# Raw / heavy data (lives in OneDrive, outside the repo)
+data/
+
+# Quarto build output and cache
+/_site/
+/.quarto/
+
+# OS noise
+.DS_Store
+Thumbs.db
