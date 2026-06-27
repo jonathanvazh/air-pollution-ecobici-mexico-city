@@ -1,0 +1,16 @@
+[
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Air Pollution & Ecobici in Mexico City",
+    "section": "",
+    "text": "This is an end-to-end case study exploring the relationship between air pollution and Ecobici bike-share usage in Mexico City, using only public data.\nThe project demonstrates a full data pipeline: extraction, data quality checks, exploratory analysis, methodological context, modeling, and publication.\nWork in progress — this page is the first published slice."
+  },
+  {
+    "objectID": "index.html#about-this-project",
+    "href": "index.html#about-this-project",
+    "title": "Air Pollution & Ecobici in Mexico City",
+    "section": "",
+    "text": "This is an end-to-end case study exploring the relationship between air pollution and Ecobici bike-share usage in Mexico City, using only public data.\nThe project demonstrates a full data pipeline: extraction, data quality checks, exploratory analysis, methodological context, modeling, and publication.\nWork in progress — this page is the first published slice."
+  }
+]
