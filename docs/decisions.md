@@ -54,3 +54,47 @@ Format inspired by Architecture Decision Records (ADRs).
 - PM2.5 scale discrepancy (daily ~12–78 µg/m³ vs hourly <1) — confirm which
   file fed the 40/50/75 flags.
 - Line endings: add a .gitattributes to normalize CRLF/LF (cosmetic, deferred).
+
+---
+
+## 2026-06-27 — First real data slice (air quality)
+
+### Data folder structure: one subfolder per source
+- **Decision:** `data/air_quality/`, `data/ecobici/`, `data/weather/`.
+- **Why:** Keeping three sources in a flat `data/` folder becomes a mess fast.
+  Separating by source keeps things navigable as the project grows.
+- **Future option:** add `raw/` vs `processed/` inside each source later.
+
+### Code lives in `scripts/`, not the project root
+- **Decision:** Python scripts go in `scripts/`.
+- **Why:** Loose scripts in the root turn into clutter. `scripts/` is the
+  standard place for run-from-start-to-finish programs (vs `src/` for
+  importable packages).
+
+### Manual download now, documented; scripted fetch later
+- **Decision:** Download data files by hand for this slice, but record
+  provenance in a `SOURCE.md` next to each file (committed to Git even though
+  the data itself is gitignored).
+- **Why:** Walking-skeleton method — validate the full pipeline first, harden
+  the extraction layer next. Manual-but-documented closes the traceability gap
+  without stalling progress. A scripted `scripts/extract/` fetch comes next.
+
+### Gitignore data contents but keep provenance docs
+- **Decision:** `.gitignore` ignores `data/**` but makes exceptions for folders
+  and `*.md` files.
+- **Why:** Version the *provenance* (where data came from), never the heavy
+  data. Recruiters can see how data was sourced without the repo carrying it.
+
+### Publish with local render, not GitHub Actions
+- **Decision:** `quarto publish gh-pages` (renders locally, pushes HTML).
+- **Why:** The page executes Python against a gitignored CSV. Rendering locally
+  means the computation happens where the data lives; only the finished HTML
+  (with the number already baked in) is published. GitHub Actions would fail —
+  it has no access to the local data. Keeps private data on the local machine.
+
+### Data quality finding: file name is misleading
+- **Finding:** The portal file is named `rama_2023_05.csv` but contains the FULL
+  daily series 2015–2023 (3073 rows), not May 2023. The misleading name comes
+  from the portal itself.
+- **Lesson:** Verify file *content*, never trust the *name*. Recorded in the
+  file's SOURCE.md.
