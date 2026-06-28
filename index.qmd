@@ -1,5 +1,6 @@
 ---
 title: "Air Pollution & Ecobici in Mexico City"
+jupyter: python3
 ---
 
 ## About this project
@@ -12,4 +13,24 @@ The project demonstrates a full data pipeline: extraction, data quality
 checks, exploratory analysis, methodological context, modeling, and
 publication.
 
-*Work in progress — this page is the first published slice.*
+## First look at the data
+
+```{python}
+#| echo: false
+import duckdb
+
+csv_path = "data/air_quality/rama_2023_05.csv"
+con = duckdb.connect()
+
+avg_pm25 = con.sql(f"""
+    SELECT ROUND(AVG(PM25), 2) AS avg_pm25
+    FROM read_csv('{csv_path}')
+""").fetchone()[0]
+
+n_days = con.sql(f"""
+    SELECT COUNT(*) FROM read_csv('{csv_path}')
+""").fetchone()[0]
+```
+
+Across `{python} n_days` days of daily readings (2015–2023), the average
+PM2.5 concentration for Mexico City was `{python} avg_pm25` µg/m³.
