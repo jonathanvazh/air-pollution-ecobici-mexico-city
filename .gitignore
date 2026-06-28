@@ -9,8 +9,12 @@ __pycache__/
 *.duckdb
 *.duckdb.wal
 
-# Raw / heavy data (lives in OneDrive, outside the repo)
-data/
+# Raw / heavy data: ignore the contents...
+data/**
+# ...but let Git traverse the folders...
+!data/**/
+# ...and keep the provenance docs (SOURCE.md, etc.)
+!data/**/*.md
 
 # Quarto build output and cache
 /_site/
