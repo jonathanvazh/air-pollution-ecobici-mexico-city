@@ -1,0 +1,15 @@
+---
+title: "Air Pollution & Ecobici in Mexico City"
+---
+
+## About this project
+
+This is an end-to-end case study exploring the relationship between
+air pollution and Ecobici bike-share usage in Mexico City, using only
+public data.
+
+The project demonstrates a full data pipeline: extraction, data quality
+checks, exploratory analysis, methodological context, modeling, and
+publication.
+
+*Work in progress — this page is the first published slice.*

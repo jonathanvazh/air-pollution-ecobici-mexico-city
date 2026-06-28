@@ -19,3 +19,4 @@ data/
 # OS noise
 .DS_Store
 Thumbs.db
+**/*.quarto_ipynb

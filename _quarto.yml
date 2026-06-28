@@ -1,0 +1,12 @@
+project:
+  type: website
+  output-dir: _site
+
+website:
+  title: "Air Pollution & Ecobici — Mexico City"
+  description: "End-to-end case study"
+
+format:
+  html:
+    theme: cosmo
+    toc: true
