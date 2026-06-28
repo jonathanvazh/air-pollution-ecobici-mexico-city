@@ -4,13 +4,48 @@
     "href": "index.html",
     "title": "Air Pollution & Ecobici in Mexico City",
     "section": "",
-    "text": "This is an end-to-end case study exploring the relationship between air pollution and Ecobici bike-share usage in Mexico City, using only public data.\nThe project demonstrates a full data pipeline: extraction, data quality checks, exploratory analysis, methodological context, modeling, and publication.\nWork in progress — this page is the first published slice."
+    "text": "This is an end-to-end case study exploring the relationship between air pollution and Ecobici bike-share usage in Mexico City, using only public data.\nThe project demonstrates a full data pipeline: extraction, data quality checks, exploratory analysis, methodological context, modeling, and publication."
   },
   {
     "objectID": "index.html#about-this-project",
     "href": "index.html#about-this-project",
     "title": "Air Pollution & Ecobici in Mexico City",
     "section": "",
-    "text": "This is an end-to-end case study exploring the relationship between air pollution and Ecobici bike-share usage in Mexico City, using only public data.\nThe project demonstrates a full data pipeline: extraction, data quality checks, exploratory analysis, methodological context, modeling, and publication.\nWork in progress — this page is the first published slice."
+    "text": "This is an end-to-end case study exploring the relationship between air pollution and Ecobici bike-share usage in Mexico City, using only public data.\nThe project demonstrates a full data pipeline: extraction, data quality checks, exploratory analysis, methodological context, modeling, and publication."
+  },
+  {
+    "objectID": "index.html#first-look-at-the-data",
+    "href": "index.html#first-look-at-the-data",
+    "title": "Air Pollution & Ecobici in Mexico City",
+    "section": "First look at the data",
+    "text": "First look at the data\nAcross 3073 days of daily readings (2015–2023), the average PM2.5 concentration for Mexico City was 21.33 µg/m³."
+  },
+  {
+    "objectID": "data/air_quality/SOURCE.html",
+    "href": "data/air_quality/SOURCE.html",
+    "title": "Data source — air quality (RAMA daily averages)",
+    "section": "",
+    "text": "Data source — air quality (RAMA daily averages)\n\nDataset: Red Automática de Monitoreo Atmosférico (RAMA), SIMAT / SEDEMA\nContent: City-wide daily averages per pollutant (CO, NO, NO2, NOX, O3, PM10, PM25, SO2)\nSource URL: [https://datos.cdmx.gob.mx/dataset/72f6b09e-30c5-4b1e-9090-80717e6aedef/resource/ebc079e5-bd11-4830-b595-14292f753575/download/rama_2023_05.csv]\nDownloaded on: [2026-06-27]\nDownloaded by: manual download (to be replaced by a scripted fetch — see decisions.md)\nFile name caveat: the file is named rama_2023_05.csv, but its contents are the FULL daily series from 2015-01-01 to 2023 (3073 rows), NOT May 2023. The portal’s own file name is misleading — verify content, not the name.\nScale note: PM25 in correct range (~12–78 µg/m³), confirmed against forensic review.\nGranularity note: city-wide only, NO per-station breakdown. Spatial analysis (station mapping) will require hourly/by-zone or per-station data later."
+  },
+  {
+    "objectID": "docs/decisions.html",
+    "href": "docs/decisions.html",
+    "title": "Decision Log",
+    "section": "",
+    "text": "A running record of non-obvious technical and methodological decisions for this project, with the reasoning and the alternatives considered.\nFormat inspired by Architecture Decision Records (ADRs).\n\n\n\n\n\n\nDecision: Public GitHub repo under the MIT License.\nWhy: This is a portfolio piece meant to be seen and reused. Without a license, default copyright applies and no one may legally reuse the code. MIT is the most permissive common license: reuse freely, keep the notice, no warranty.\nNote / open item: MIT covers code, not data or written content. Public data (SEDEMA, Ecobici) carries its own terms of use; prose and figures may later warrant a CC-BY license. To revisit.\n\n\n\n\n\nDecision: Hand-written .gitignore tailored to this stack.\nWhy: Commit the recipe, never the cooked meal. The virtual environment (.venv/), the DuckDB files, raw data, and Quarto build output (_site/, .quarto/) are all reproducible or machine-specific, so they stay out of version control. Keeps the repo light, clean, and free of secrets or heavy data.\n\n\n\n\n\nDecision: uv for Python version, environment, and dependencies.\nWhy: Single fast tool. The pair pyproject.toml + uv.lock pins exact versions, so the environment rebuilds identically on any machine or in a year. Reproducibility by default.\n\n\n\n\n\nDecision: Clone to C:, not under the OneDrive-synced user folder.\nWhy: OneDrive syncing a .git folder in the background can corrupt Git history. Earlier projects lived under OneDrive; this one deliberately does not.\n\n\n\n\n\nDecision: Quarto website published via quarto publish gh-pages.\nWhy: Quarto turns analysis (text + code) into a clean website with one command. The gh-pages branch keeps published output separate from source. Walking-skeleton method: ship a thin end-to-end slice first, then fatten.\n\n\n\n\n\n\n\nLicense for data and written content (CC-BY?) — see MIT note above.\nstation_id namespace bug: SINAICA catalog id 32 = Aguascalientes, not CDMX. Verify which real monitor each Ecobici station maps to before building on it.\nPM2.5 scale discrepancy (daily ~12–78 µg/m³ vs hourly &lt;1) — confirm which file fed the 40/50/75 flags.\nLine endings: add a .gitattributes to normalize CRLF/LF (cosmetic, deferred)."
+  },
+  {
+    "objectID": "docs/decisions.html#tooling-and-project-setup",
+    "href": "docs/decisions.html#tooling-and-project-setup",
+    "title": "Decision Log",
+    "section": "",
+    "text": "Decision: Public GitHub repo under the MIT License.\nWhy: This is a portfolio piece meant to be seen and reused. Without a license, default copyright applies and no one may legally reuse the code. MIT is the most permissive common license: reuse freely, keep the notice, no warranty.\nNote / open item: MIT covers code, not data or written content. Public data (SEDEMA, Ecobici) carries its own terms of use; prose and figures may later warrant a CC-BY license. To revisit.\n\n\n\n\n\nDecision: Hand-written .gitignore tailored to this stack.\nWhy: Commit the recipe, never the cooked meal. The virtual environment (.venv/), the DuckDB files, raw data, and Quarto build output (_site/, .quarto/) are all reproducible or machine-specific, so they stay out of version control. Keeps the repo light, clean, and free of secrets or heavy data.\n\n\n\n\n\nDecision: uv for Python version, environment, and dependencies.\nWhy: Single fast tool. The pair pyproject.toml + uv.lock pins exact versions, so the environment rebuilds identically on any machine or in a year. Reproducibility by default.\n\n\n\n\n\nDecision: Clone to C:, not under the OneDrive-synced user folder.\nWhy: OneDrive syncing a .git folder in the background can corrupt Git history. Earlier projects lived under OneDrive; this one deliberately does not.\n\n\n\n\n\nDecision: Quarto website published via quarto publish gh-pages.\nWhy: Quarto turns analysis (text + code) into a clean website with one command. The gh-pages branch keeps published output separate from source. Walking-skeleton method: ship a thin end-to-end slice first, then fatten."
+  },
+  {
+    "objectID": "docs/decisions.html#open-items-decisions-still-to-make",
+    "href": "docs/decisions.html#open-items-decisions-still-to-make",
+    "title": "Decision Log",
+    "section": "",
+    "text": "License for data and written content (CC-BY?) — see MIT note above.\nstation_id namespace bug: SINAICA catalog id 32 = Aguascalientes, not CDMX. Verify which real monitor each Ecobici station maps to before building on it.\nPM2.5 scale discrepancy (daily ~12–78 µg/m³ vs hourly &lt;1) — confirm which file fed the 40/50/75 flags.\nLine endings: add a .gitattributes to normalize CRLF/LF (cosmetic, deferred)."
   }
 ]

@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Air Pollution &amp; Ecobici in Mexico City – Air Pollution &amp; Ecobici — Mexico City</title>
+<title>decisions – Air Pollution &amp; Ecobici — Mexico City</title>
 <style>
 /* Default styles provided by pandoc.
 ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
@@ -26,22 +26,22 @@ ul.task-list li input[type="checkbox"] {
 </style>
 
 
-<script src="site_libs/quarto-nav/quarto-nav.js"></script>
-<script src="site_libs/clipboard/clipboard.min.js"></script>
-<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
-<script src="site_libs/quarto-search/fuse.min.js"></script>
-<script src="site_libs/quarto-search/quarto-search.js"></script>
-<meta name="quarto:offset" content="./">
-<script src="site_libs/quarto-html/quarto.js" type="module"></script>
-<script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
-<script src="site_libs/quarto-html/popper.min.js"></script>
-<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
-<script src="site_libs/quarto-html/anchor.min.js"></script>
-<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-15634bcf2e68342d4ad2dfa704d543f6.css" rel="stylesheet" id="quarto-text-highlighting-styles">
-<script src="site_libs/bootstrap/bootstrap.min.js"></script>
-<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap-a0f9fd0d421825b736dc1bbcbcba2219.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script src="../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../">
+<script src="../site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="../site_libs/quarto-html/popper.min.js"></script>
+<script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-15634bcf2e68342d4ad2dfa704d543f6.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../site_libs/bootstrap/bootstrap-a0f9fd0d421825b736dc1bbcbcba2219.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
@@ -85,43 +85,83 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#about-this-project" id="toc-about-this-project" class="nav-link active" data-scroll-target="#about-this-project">About this project</a></li>
-  <li><a href="#first-look-at-the-data" id="toc-first-look-at-the-data" class="nav-link" data-scroll-target="#first-look-at-the-data">First look at the data</a></li>
+  <li><a href="#decision-log" id="toc-decision-log" class="nav-link active" data-scroll-target="#decision-log">Decision Log</a>
+  <ul class="collapse">
+  <li><a href="#tooling-and-project-setup" id="toc-tooling-and-project-setup" class="nav-link" data-scroll-target="#tooling-and-project-setup">2026-06-26 — Tooling and project setup</a>
+  <ul class="collapse">
+  <li><a href="#repository-is-public-licensed-mit" id="toc-repository-is-public-licensed-mit" class="nav-link" data-scroll-target="#repository-is-public-licensed-mit">Repository is public, licensed MIT</a></li>
+  <li><a href="#custom-.gitignore-instead-of-a-generated-one" id="toc-custom-.gitignore-instead-of-a-generated-one" class="nav-link" data-scroll-target="#custom-.gitignore-instead-of-a-generated-one">Custom .gitignore instead of a generated one</a></li>
+  <li><a href="#python-managed-with-uv" id="toc-python-managed-with-uv" class="nav-link" data-scroll-target="#python-managed-with-uv">Python managed with uv</a></li>
+  <li><a href="#local-repo-lives-outside-onedrive" id="toc-local-repo-lives-outside-onedrive" class="nav-link" data-scroll-target="#local-repo-lives-outside-onedrive">Local repo lives outside OneDrive</a></li>
+  <li><a href="#publishing-with-quarto-to-github-pages" id="toc-publishing-with-quarto-to-github-pages" class="nav-link" data-scroll-target="#publishing-with-quarto-to-github-pages">Publishing with Quarto to GitHub Pages</a></li>
+  </ul></li>
+  <li><a href="#open-items-decisions-still-to-make" id="toc-open-items-decisions-still-to-make" class="nav-link" data-scroll-target="#open-items-decisions-still-to-make">Open items / decisions still to make</a></li>
+  </ul></li>
   </ul>
 </nav>
     </div>
 <!-- main -->
-<main class="content" id="quarto-document-content">
-
-<header id="title-block-header" class="quarto-title-block default">
-<div class="quarto-title">
-<h1 class="title">Air Pollution &amp; Ecobici in Mexico City</h1>
-</div>
+<main class="content" id="quarto-document-content"><header id="title-block-header" class="quarto-title-block"></header>
 
 
 
-<div class="quarto-title-meta">
 
-    
-  
-    
-  </div>
-  
-
-
-</header>
-
-
-<section id="about-this-project" class="level2">
-<h2 class="anchored" data-anchor-id="about-this-project">About this project</h2>
-<p>This is an end-to-end case study exploring the relationship between air pollution and Ecobici bike-share usage in Mexico City, using only public data.</p>
-<p>The project demonstrates a full data pipeline: extraction, data quality checks, exploratory analysis, methodological context, modeling, and publication.</p>
+<section id="decision-log" class="level1">
+<h1>Decision Log</h1>
+<p>A running record of non-obvious technical and methodological decisions for this project, with the reasoning and the alternatives considered.</p>
+<p>Format inspired by Architecture Decision Records (ADRs).</p>
+<hr>
+<section id="tooling-and-project-setup" class="level2">
+<h2 class="anchored" data-anchor-id="tooling-and-project-setup">2026-06-26 — Tooling and project setup</h2>
+<section id="repository-is-public-licensed-mit" class="level3">
+<h3 class="anchored" data-anchor-id="repository-is-public-licensed-mit">Repository is public, licensed MIT</h3>
+<ul>
+<li><strong>Decision:</strong> Public GitHub repo under the MIT License.</li>
+<li><strong>Why:</strong> This is a portfolio piece meant to be seen and reused. Without a license, default copyright applies and no one may legally reuse the code. MIT is the most permissive common license: reuse freely, keep the notice, no warranty.</li>
+<li><strong>Note / open item:</strong> MIT covers <em>code</em>, not <em>data</em> or written content. Public data (SEDEMA, Ecobici) carries its own terms of use; prose and figures may later warrant a CC-BY license. To revisit.</li>
+</ul>
 </section>
-<section id="first-look-at-the-data" class="level2">
-<h2 class="anchored" data-anchor-id="first-look-at-the-data">First look at the data</h2>
-<p>Across 3073 days of daily readings (2015–2023), the average PM2.5 concentration for Mexico City was 21.33 µg/m³.</p>
+<section id="custom-.gitignore-instead-of-a-generated-one" class="level3">
+<h3 class="anchored" data-anchor-id="custom-.gitignore-instead-of-a-generated-one">Custom .gitignore instead of a generated one</h3>
+<ul>
+<li><strong>Decision:</strong> Hand-written .gitignore tailored to this stack.</li>
+<li><strong>Why:</strong> Commit the <em>recipe</em>, never the <em>cooked meal</em>. The virtual environment (.venv/), the DuckDB files, raw data, and Quarto build output (_site/, .quarto/) are all reproducible or machine-specific, so they stay out of version control. Keeps the repo light, clean, and free of secrets or heavy data.</li>
+</ul>
+</section>
+<section id="python-managed-with-uv" class="level3">
+<h3 class="anchored" data-anchor-id="python-managed-with-uv">Python managed with uv</h3>
+<ul>
+<li><strong>Decision:</strong> uv for Python version, environment, and dependencies.</li>
+<li><strong>Why:</strong> Single fast tool. The pair pyproject.toml + uv.lock pins exact versions, so the environment rebuilds identically on any machine or in a year. Reproducibility by default.</li>
+</ul>
+</section>
+<section id="local-repo-lives-outside-onedrive" class="level3">
+<h3 class="anchored" data-anchor-id="local-repo-lives-outside-onedrive">Local repo lives outside OneDrive</h3>
+<ul>
+<li><strong>Decision:</strong> Clone to C:, not under the OneDrive-synced user folder.</li>
+<li><strong>Why:</strong> OneDrive syncing a .git folder in the background can corrupt Git history. Earlier projects lived under OneDrive; this one deliberately does not.</li>
+</ul>
+</section>
+<section id="publishing-with-quarto-to-github-pages" class="level3">
+<h3 class="anchored" data-anchor-id="publishing-with-quarto-to-github-pages">Publishing with Quarto to GitHub Pages</h3>
+<ul>
+<li><strong>Decision:</strong> Quarto website published via <code>quarto publish gh-pages</code>.</li>
+<li><strong>Why:</strong> Quarto turns analysis (text + code) into a clean website with one command. The gh-pages branch keeps published output separate from source. Walking-skeleton method: ship a thin end-to-end slice first, then fatten.</li>
+</ul>
+<hr>
+</section>
+</section>
+<section id="open-items-decisions-still-to-make" class="level2">
+<h2 class="anchored" data-anchor-id="open-items-decisions-still-to-make">Open items / decisions still to make</h2>
+<ul>
+<li>License for data and written content (CC-BY?) — see MIT note above.</li>
+<li>station_id namespace bug: SINAICA catalog id 32 = Aguascalientes, not CDMX. Verify which real monitor each Ecobici station maps to before building on it.</li>
+<li>PM2.5 scale discrepancy (daily ~12–78 µg/m³ vs hourly &lt;1) — confirm which file fed the 40/50/75 flags.</li>
+<li>Line endings: add a .gitattributes to normalize CRLF/LF (cosmetic, deferred).</li>
+</ul>
 
 
+</section>
 </section>
 
 </main> <!-- /main -->
